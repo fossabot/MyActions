@@ -65,7 +65,7 @@ except:
     # 本地调试用，在线勿填
     TG_USER_ID = ''
 
-title = 'EUserv Extend'
+title = 'EUserv Renew'
 imgFile = '/imgCAPTCHA.png'
 imgScreenShot = '/imgScreenShot.png'
 urlEUserv = 'https://support.euserv.com/'
