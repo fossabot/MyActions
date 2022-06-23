@@ -17,13 +17,13 @@ from selenium.webdriver.common.by import By
 ssl._create_default_https_context = ssl._create_unverified_context
 
 try:
-    USER_ID = os.environ['USER_ID']
+    USER_ID_2 = os.environ['USER_ID_2']
 except:
     # 本地调试用
-    USER_ID = ''
+    USER_ID_2 = ''
 
 try:
-    PASS_WD = os.environ['PASS_WD']
+    PASS_WD = os.environ['PASS_WD_2']
 except:
     # 本地调试用
     PASS_WD = ''
