@@ -37,6 +37,7 @@ jobs:
             TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
           run: |
-            python3 ./main-h.py
+            python3 ./main-w.py.
             python3 ./main-h-2.py
-            python3 ./main-2.py
+            python3 ./main-h.py
+
