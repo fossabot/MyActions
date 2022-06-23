@@ -38,6 +38,4 @@ jobs:
 
           run: |
             python3 main-w.py.
-            python3 main-h-2.py
-            python3 main-h.py
 
