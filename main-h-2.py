@@ -17,13 +17,13 @@ from selenium.webdriver.common.by import By
 ssl._create_default_https_context = ssl._create_unverified_context
 
 try:
-    USER_ID_2 = os.environ['USER_ID_2']
+    USER_ID = os.environ['USER_ID']
 except:
     # 本地调试用
-    USER_ID_2 = ''
+    USER_ID = ''
 
 try:
-    PASS_WD = os.environ['PASS_WD_2']
+    PASS_WD = os.environ['PASS_WD']
 except:
     # 本地调试用
     PASS_WD = ''
@@ -173,7 +173,7 @@ def login():
     cloudflareDT()
 
     #scrollDown('@login')
-    scrollDown('.btn btn-primary')
+    #scrollDown('.btn btn-primary')
 
     print('- fill user id')
     if USER_ID == '':
