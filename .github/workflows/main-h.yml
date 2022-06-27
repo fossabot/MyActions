@@ -1,4 +1,4 @@
-name: 'h-Renew'
+name: 'H-Extend'
 
 on:
   #push:
@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     #runs-on: macos-latest
-    runs-on: macos-latest
+    runs-on: macos-12
 
     steps:
         - name: 'Checkout codes'
@@ -25,17 +25,16 @@ jobs:
           run: |
             pip3 install -r ./requirements.txt
             pip3 install undetected-chromedriver
+            yes | pip3 uninstall selenium
+            pip3 install selenium==4.2.0
             
         - name: 'Renew'
           env:
             USER_ID: ${{ secrets.USER_ID }}
             PASS_WD: ${{ secrets.PASS_WD }}
-            USER_ID_2: ${{ secrets.USER_ID_2 }}
-            PASS_WD_2: ${{ secrets.PASS_WD_2 }}
             BARK_KEY: ${{ secrets.BARK_KEY }}
             TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
             TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
           run: |
-            python3 ./main-h.py.
-
+            python3 ./main-h.py
