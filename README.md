@@ -6,8 +6,6 @@
 |`PASS_WD`|你的密码|
 |`EU_USER_ID`| 你的 EU 账号                                                                                                    |
 |`EU_PASS_WD`| 你的 EU 密码  
-|`USER_ID_2`|你的 id2|
-|`PASS_WD_2`|你的密码|
 |`BARK_KEY`|(可选) https://api.day.app/BARK_KEY/|
 |`TG_BOT_TOKEN`|(可选) `xxxxxx:xxxxxxxxxxxxx`|
 |`TG_USER_ID`|(可选) 给 bot `@userinfobot` 发送 `/start`|
