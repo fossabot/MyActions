@@ -1,4 +1,4 @@
-name: Daily Bonus
+name: "V2EX"
 
 on:
   schedule:
