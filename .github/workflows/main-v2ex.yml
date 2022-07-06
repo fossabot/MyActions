@@ -1,4 +1,4 @@
-name: "V2EX"
+name: "V2EX-Checkin"
 
 on:
   schedule:
@@ -29,5 +29,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r V2EX/requirements.txt
       - name: Check-in
-        run: python V2RX/message.py
+        run: python V2EX/message.py
         if: always()
