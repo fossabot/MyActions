@@ -26,8 +26,8 @@ jobs:
 
         - name: 'Install requirements'
           run: |
-            python3 -m pip install -r ./requirements.txt
-#            python3 -m pip install --upgrade pip
+            python3 -m pip install -r VPS/requirements.txt
+#           python3 -m pip install --upgrade pip
         - name: 'Renew'
           env:
             EU_USER_ID: ${{ secrets.EU_USER_ID }}
@@ -40,4 +40,4 @@ jobs:
             TG_USER_ID: ${{ secrets.TG_USER_ID }}
             
           run: |
-            python3 ./main-e.py
+            python3 VPS/main-e.py
