@@ -1,8 +1,11 @@
 name: "V2EX-Checkin"
-
 on:
+  #push:
   schedule:
-    - cron: '30 23 * * *'
+    # UTC (国内 UTC+8)
+     - cron: '15 13 * * *'
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
   build:
