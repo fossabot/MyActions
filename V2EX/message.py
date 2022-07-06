@@ -7,11 +7,7 @@ import os
 import time
 from datetime import datetime, timedelta
 
-from Bilibili import bilibili_checkin
-from Music163 import music_checkin
-from Picacomic import pica_checkin
 from V2EX import v2ex_checkin
-from Yamibo import yamibo_checkin
 from telegram import Bot
 
 # info
