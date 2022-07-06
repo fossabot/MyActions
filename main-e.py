@@ -268,10 +268,17 @@ def login_euserv():
         scroll_down(800)
         print('- click button [Save]')
         time.sleep(1)
-        click('Save')
-        print('- renew')
-        time.sleep(1)
-        renew()
+        try:
+            click('Save')
+            print('- renew')
+            time.sleep(1)
+            renew()
+        except Exception as e:
+            print(e)
+            # debug
+            screenshot()
+            print('*** - click button [Save] failed! ***')
+        
     elif Text('To finish the login process enter the PIN that you receive via email.').exists():
         print('*** To finish the login process enter the PIN that you receive via email. ***')
         pin = get_pin()
