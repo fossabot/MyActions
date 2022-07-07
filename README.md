@@ -18,3 +18,11 @@
 |`TELEGRAM_BOT_TOKEN`|(可选) `xxxxxx:xxxxxxxxxxxxx`|
 |`TELEGRAM_USER_ID`|(可选) 给 bot `@userinfobot` 发送 `/start`|
 |`YS_COOKIE`|米游社CK |
+
+📚
+https://github.com/mybdye/Project-E
+https://github.com/mybdye/Project-H
+https://github.com/luolongfei/freenom
+https://github.com/aquamarine5/GenshinBirthdayReceiver
+https://github.com/PetrelPine/genshin-auto-sign-in
+https://github.com/ElainaMoe/MHYY-AutoCheckin
