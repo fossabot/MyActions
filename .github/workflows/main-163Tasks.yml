@@ -34,7 +34,7 @@ jobs:
       # 请将 config.json 中所有内容填入 secrets 中的 CONFIG 环境变量
       - name: Export Config
         run: 
-          wget https://gist.githubusercontent.com/e5u/eca1ba11b9aaf91d99f6b93ef92513e8/raw/b4d86194a9824de53a9552f3bdb61edc74f28df8/config.json
+          wget https://pastebin.com/raw/Yrx9W9D9 >config.json
           chmod 777 config.json
 
       # Runs a set of commands using the runners shell
