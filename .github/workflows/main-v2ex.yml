@@ -22,6 +22,6 @@ jobs:
               run: |
                   node V2EX/v2ex.js
               env:
-                  V2EXCK: ${{ secrets.V2EXCK }}
+                  V2EX_COOKIES: ${{ secrets.V2EXCK }}
                   TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
                   TG_USER_ID: ${{ secrets.TG_USER_ID }}
