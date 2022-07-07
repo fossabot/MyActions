@@ -13,10 +13,8 @@
 |`MHYY_CONFIG`| 米哈云游CONFIG
 |`NOTICE_FREQ`| 推送频率 1/0
 |`PASS_WD`|你的 H&W 密码|
+|`PASS_WD`|你的 H&W 密码|
 |`TELEGRAM_BOT_ENABLE`| true
 |`TELEGRAM_BOT_TOKEN`|(可选) `xxxxxx:xxxxxxxxxxxxx`|
 |`TELEGRAM_USER_ID`|(可选) 给 bot `@userinfobot` 发送 `/start`|
-|`PASS_WD`|你的 H&W 密码|
-|`TG_BOT_TOKEN`|(可选) `xxxxxx:xxxxxxxxxxxxx`|
-|`TG_USER_ID`|(可选) 给 bot `@userinfobot` 发送 `/start`|
-|`USER_ID`|你的 H&W id|
+|`YS_COOKIE`|米游社CK |
