@@ -1,4 +1,4 @@
-name: 'KeepActionAlive'
+name: 'Action-KeepAlive'
 
 on:
   workflow_dispatch:
