@@ -28,4 +28,4 @@ jobs:
           sed -i "s/^ON_GITHUB_ACTIONS=.*$/ON_GITHUB_ACTIONS=true/" Freenom/.env
       - name: Renewing Freenom domains
         run: |
-          cd Freenom & php run
+         php Freenom/run
