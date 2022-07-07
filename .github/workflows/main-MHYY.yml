@@ -27,9 +27,9 @@ jobs:
         python-version: 3.8
     - name: Install requirements #安装轮子
       run: |
-        pip install -r MHYY/requirements.txt
+        pip install -r Genshin/MHYY/requirements.txt
     - name: Run script
       env:
         config: ${{ secrets.MHYY_CONFIG }}
       run: |
-        python3 MHYY/main.py
+        python3 Genshin/MHYY/main.py

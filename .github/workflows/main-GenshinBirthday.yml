@@ -1,0 +1,28 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: GenshinBirthday-Checkin
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.10"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+        if [ -f Genshin/BirthdayReceiver/requirements.txt ]; then pip install -r Genshin/BirthdayReceiver/requirements.txt; fi
+    - name: Run GenshinBirthdayReceiver
+      env:
+        COOKIE: ${{ secrets.COOKIE }}
+      run : python Genshin/BirthdayReceiver/genshin_birthday_receiver.py --forced-indexed
