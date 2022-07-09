@@ -14,6 +14,9 @@
 |`NOTICE_FREQ`| 推送频率 1/0
 |`PASS_WD`|你的 H&W 密码|
 |`PASS_WD`|你的 H&W 密码|
+|`BASE_URL`| 网址(基于SSpanel)                        |
+|`EMAIL`| 邮箱                                |
+|`PASSWD`| 密码                                                                 |
 |`TELEGRAM_BOT_ENABLE`| true
 |`TELEGRAM_BOT_TOKEN`|(可选) `xxxxxx:xxxxxxxxxxxxx`|
 |`TELEGRAM_USER_ID`|(可选) 给 bot `@userinfobot` 发送 `/start`|
