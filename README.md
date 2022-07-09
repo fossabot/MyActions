@@ -1,3 +1,14 @@
+#### 状态
+[![Airport-Checkin](https://github.com/e5u/MyActions/actions/workflows/main-Airport.yml/badge.svg)](https://github.com/e5u/MyActions/actions/workflows/main-Airport.yml)
+[![EUserv-Renew](https://github.com/e5u/MyActions/actions/workflows/main-e.yml/badge.svg)](https://github.com/e5u/MyActions/actions/workflows/main-e.yml)
+[![Freenom-Renew](https://github.com/e5u/MyActions/actions/workflows/main-Freenom.yml/badge.svg)](https://github.com/e5u/MyActions/actions/workflows/main-Freenom.yml)
+[![GenshinBirthday-Checkin](https://github.com/e5u/MyActions/actions/workflows/main-GenshinBirthday.yml/badge.svg)](https://github.com/e5u/MyActions/actions/workflows/main-GenshinBirthday.yml)
+[![H-Extend](https://github.com/e5u/MyActions/actions/workflows/main-h.yml/badge.svg)](https://github.com/e5u/MyActions/actions/workflows/main-h.yml)
+[![HOYOBBS-Checkin](https://github.com/e5u/MyActions/actions/workflows/main-HOYOBBS.yml/badge.svg)](https://github.com/e5u/MyActions/actions/workflows/main-HOYOBBS.yml)
+[![MHYY-Checkin](https://github.com/e5u/MyActions/actions/workflows/main-MHYY.yml/badge.svg)](https://github.com/e5u/MyActions/actions/workflows/main-MHYY.yml)
+[![W-Extend](https://github.com/e5u/MyActions/actions/workflows/main-w.yml/badge.svg)](https://github.com/e5u/MyActions/actions/workflows/main-w.yml)
+
+
 #### ㊙️自用 所有东西都是别人的
 
 |YOU SECRET NAME|YOU SECRET VALUE|
