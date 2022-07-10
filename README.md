@@ -24,7 +24,6 @@
 |`MHYY_CONFIG`| 米哈云游CONFIG
 |`NOTICE_FREQ`| 推送频率 1/0
 |`PASS_WD`|你的 H&W 密码|
-|`PASS_WD`|你的 H&W 密码|
 |`BASE_URL`| 网址(基于SSpanel)                        |
 |`EMAIL`| 邮箱                                |
 |`PASSWD`| 密码                                                                 |
