@@ -11,7 +11,8 @@ env:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout master
         uses: actions/checkout@v2

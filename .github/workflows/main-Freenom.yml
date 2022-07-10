@@ -6,7 +6,7 @@ on:
     - cron: 00 02 * * *
 jobs:
   run-it:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     name: Run it on action
     steps:
       - name: Checkout master
