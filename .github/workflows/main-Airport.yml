@@ -22,7 +22,7 @@ jobs:
 
         - name: 'Install requirements'
           run: |
-            pip install -r Airport/requirements.txt
+            python3 -m pip install -r Airport/requirements.txt
 #            python3 -m pip install --upgrade pip
         - name: 'SignIn'
           env:
