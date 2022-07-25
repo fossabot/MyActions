@@ -125,14 +125,10 @@ def captcha():
 
 # 续期
 def renew():
-    time.sleep(5)
-    try:
-        wait_until(Text('vServer').exists)
-        print('- click button [vServer]')
-        click(S('#kc2_order_customer_orders_tab_1'))
-    except Exception as e:
-            print(e)
-            screenshot()
+    time.sleep(3)
+    wait_until(Text('vServer').exists)
+    print('- click button [vServer]')
+    click(S('#kc2_order_customer_orders_tab_1'))
     time.sleep(3)
     try:
         wait_until(Text('Extend contract').exists)
@@ -157,14 +153,11 @@ def renew():
             pin = get_pin()
         time.sleep(2)
         print('- fill pin')
-        write(pin, into=S('@auth'))
-        print('- click button [Continue]')
+        write(pin, into=S('@password'))
         click('Continue')
         wait_until(Text('Contract Extension Confirmation').exists)
-        print('- click button [Confirm]')
         click('Confirm')
         if Text('Thank you! The contract has been extended.').exists():
-            print('🎉 Thank you! The contract has been extended.')
             push('🎉 Thank you! The contract has been extended.')
 
     except Exception as e:
@@ -172,14 +165,14 @@ def renew():
         text_list = find_all(S('.kc2_order_extend_contract_term_container'))
         text = [key.web_element.text for key in text_list][0]
         print('status of vps:', text)
-        date_delta = date_delta_calculate(text.split(' ')[-1])
+        date_delta = date_delta_caculate(text.split(' ')[-1])
         if date_delta > 0:
-            print('*** No Need To Renew ***\n🕙 %d Days Left!' % date_delta)
-            body = text + '\n*** No Need To Renew ***\n🕙 ' + str(date_delta) + ' Days Left!'
+            print('*** No Need To Renew ***\n %d Days Left!' % date_delta)
+            body = text + '\n*** No Need To Renew ***\n' + str(date_delta) + ' Days Left!'
             push(body)
 
 # 日期计算
-def date_delta_calculate(date_allow):
+def date_delta_caculate(date_allow):
     date_allow = datetime.strptime(date_allow, '%Y-%m-%d')
     date_now = time.strftime('%Y-%m-%d')
     date_now = datetime.strptime(date_now, '%Y-%m-%d')
@@ -255,50 +248,34 @@ def login_euserv():
     if Image('CAPTCHA Image').exists():
         print('- CAPTCHA Found')
         captcha()
-        if Text('The captcha solution is not correct.').exists:
+        while Text('The captcha solution is not correct.').exists:
             print('*** The captcha solution is not correct. ***')
-            go_to(urlEUserv)
-            login_euserv()
-            # captcha()
-            # if not Text('The captcha solution is not correct.').exists():
-            #     print('- captcha done')
-            #     break
+            captcha()
+            if not Text('The captcha solution is not correct.').exists():
+                print('- captcha done')
+                break
     if Text('Confirm or change your customer data here.').exists():
         print('- login success, customer data need to be check')
         scroll_down(800)
         print('- click button [Save]')
         time.sleep(1)
-        try:
-            click('Save')
-            print('- renew')
-            time.sleep(1)
-            renew()
-        except Exception as e:
-            print(e)
-            # debug
-            screenshot()
-            print('*** - click button [Save] failed! ***')
-        
+        click('Save')
+        print('- renew')
+        time.sleep(1)
+        renew()
     elif Text('To finish the login process enter the PIN that you receive via email.').exists():
         print('*** To finish the login process enter the PIN that you receive via email. ***')
         pin = get_pin()
         time.sleep(2)
         print('- fill pin')
-        write(pin, into=S('@pin'))
+        #write(pin, into=S('@auth'))
+        write(pin, into=S('@password'))
         print('- click button [Confirm]')
         time.sleep(1)
         click('Confirm')
-        time.sleep(3)
-        
-        if Text('Hello').exists():
-            print('- login success')
-            print('- renew')
-            time.sleep(1)
-            renew()
-        else:
-            # debug
-            screenshot()
-            
+        print('- renew')
+        time.sleep(1)
+        renew()
     elif Text('Hello').exists():
         print('- login success')
         print('- renew')
