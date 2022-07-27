@@ -17,10 +17,6 @@ jobs:
         - name: 'Checkout codes'
           uses: actions/checkout@v2
           
-        - name: 'Update Chrome'           
-          run: |
-            brew reinstall --cask google-chrome
-            
         - name: 'Set Cloudflare WARP'           
           run: |
             brew install wgcf
@@ -30,10 +26,15 @@ jobs:
             wgcf generate
             echo ls
             ls
-            mkdir /etc/wireguard/
+            sudo mkdir /etc/wireguard/
             sudo cp wgcf-profile.conf /etc/wireguard/wgcf.conf
             wg-quick up wgcf
             curl ip.p3terx.com
+            
+          
+        - name: 'Update Chrome'           
+          run: |
+            brew reinstall --cask google-chrome
             
           
         - name: 'Install requirements'
