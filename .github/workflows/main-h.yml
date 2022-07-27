@@ -20,7 +20,7 @@ jobs:
         - name: 'Update Chrome'           
           run: |
             brew reinstall --cask google-chrome
-
+            brew install --cask cloudflare-warp
         - name: 'Install requirements'
           run: |
             pip3 install -r VPS/requirements.txt
