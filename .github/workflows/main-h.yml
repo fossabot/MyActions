@@ -20,15 +20,13 @@ jobs:
         - name: 'Set Cloudflare WARP'           
           run: |
             brew install wgcf
-            brew install jq
             brew install wireguard-tools
             wgcf register --accept-tos
             wgcf generate
-            echo ls
-            ls
             sudo mkdir /etc/wireguard/
             sudo cp wgcf-profile.conf /etc/wireguard/wgcf.conf
             wg-quick up wgcf
+            echo 
             curl ip.p3terx.com
             
           
