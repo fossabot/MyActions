@@ -27,7 +27,7 @@ jobs:
             brew install wireguard-tools
             wgcf register --accept-tos
             wgcf generate
-            cp -f wgcf-profile.conf /etc/wireguard/wgcf.conf
+            ls
           
         - name: 'Install requirements'
           run: |
