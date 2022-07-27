@@ -24,12 +24,18 @@ jobs:
         - name: 'Set Cloudflare WARP'           
           run: |
             brew install wgcf
+            brew install jq
             brew install wireguard-tools
             wgcf register --accept-tos
             wgcf generate
+            echo ls
             ls
-            mv -f wgcf-profile.conf /etc/wireguard/wgcf.conf
-            mv -f wgcf-account.toml /etc/wireguard/wgcf-account.toml
+            mkdir /etc/wireguard/
+            sudo cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+            wg-quick up wgcf
+            curl ip.p3terx.com
+            
+          
         - name: 'Install requirements'
           run: |
             pip3 install -r VPS/requirements.txt
