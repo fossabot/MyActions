@@ -396,8 +396,11 @@ block = False
 # robot = 0
 
 print('- loading...')
+opts = ChromeOptions()
+opts.add_argument("--incognito")
+opts.add_argument("--window-size=785,627")
+driver = Chrome(options=opts)
 driver = uc.Chrome(use_subprocess=True)
-driver.set_window_size(785, 627)
 delay(2)
 set_driver(driver)
 go_to(urlLogin)
