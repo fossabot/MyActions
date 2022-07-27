@@ -24,7 +24,7 @@ jobs:
         - name: 'Set Cloudflare WARP'           
           run: |
             brew install wgcf
-            brew install wireGuard
+            brew install wireguard-go
             wgcf register
             wgcf generate
             sudo wg-quick up wgcf
