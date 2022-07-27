@@ -17,18 +17,6 @@ jobs:
         - name: 'Checkout codes'
           uses: actions/checkout@v2
           
-        - name: 'Set Cloudflare WARP'           
-          run: |
-            brew install wgcf
-            brew install wireguard-tools
-            wgcf register --accept-tos
-            wgcf generate
-            sudo mkdir /etc/wireguard/
-            sudo cp wgcf-profile.conf /etc/wireguard/wgcf.conf
-            wg-quick up wgcf
-            echo 
-            curl ip.p3terx.com
-            
         - name: 'Update Chrome'           
           run: |
             brew reinstall --cask google-chrome
@@ -43,6 +31,18 @@ jobs:
         - name: 'Random sleep'
           run: |
             sleep $[ ( $RANDOM % 100 )  + 1 ]
+            
+        - name: 'Set Cloudflare WARP'           
+          run: |
+            brew install wgcf
+            brew install wireguard-tools
+            wgcf register --accept-tos
+            wgcf generate
+            sudo mkdir /etc/wireguard/
+            sudo cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+            wg-quick up wgcf
+            echo 
+            curl ip.p3terx.com
             
         - name: 'Renew'
           env:
