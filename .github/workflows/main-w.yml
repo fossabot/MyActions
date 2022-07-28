@@ -19,7 +19,7 @@ jobs:
           
         - name: 'Update Chrome'           
           run: |
-sudo curl -o /usr/local/bin/mac.sh https://raw.githubusercontents.com/fscarmen/warp/main/pc/mac.sh && bash mac.sh c
+            sudo curl -o /usr/local/bin/mac.sh https://raw.githubusercontents.com/fscarmen/warp/main/pc/mac.sh && bash mac.sh c
             brew reinstall --cask google-chrome
 
         - name: 'Install requirements'
