@@ -31,7 +31,7 @@ jobs:
         - name: 'Renew'
           env:
             USER_ID: ${{ secrets.W_USER_ID }}
-            PASS_WD: ${{ secrets.W_PASS_WD
+            PASS_WD: ${{ secrets.W_PASS_WD }}
             BARK_KEY: ${{ secrets.BARK_KEY }}
             TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
             TG_USER_ID: ${{ secrets.TG_USER_ID }}
