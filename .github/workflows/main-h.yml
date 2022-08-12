@@ -21,6 +21,19 @@ jobs:
           run: |
             brew reinstall --cask google-chrome
             
+        - name: 'Install Clash'
+          run: |
+            wget https://github.com/Dreamacro/clash/releases/download/v1.11.4/clash-darwin-amd64-v1.11.4.gz
+            tar -zxvf clash-darwin-amd64-v1.11.4.gz
+            sudo chmod +x clash-darwin-amd64-v1.11.4
+            cp clash-darwin-amd64-v1.11.4 ~/.config/clash/clash
+            cd ~/.config/clash
+            wget -O Country.mmdb https://www.sub-speeder.com/client-download/Country.mmdb
+            wget -O config.yaml https://openit.daycat.space/clash
+            echo ls
+            ls
+            screen ./clash
+            
         - name: 'Install requirements'
           run: |
             pip3 install -r VPS/requirements.txt
