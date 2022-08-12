@@ -25,6 +25,7 @@
 |`NOTICE_FREQ`| 推送频率 1/0
 |`PASS_WD`|你的 H&W 密码|
 |`BASE_URL`| 网址(基于SSpanel)                        |
+|`CLASH_YAML`| Clash代理配置文件下载链接                        |
 |`EMAIL`| 邮箱                                |
 |`PASSWD`| 密码                                                                 |
 |`TELEGRAM_BOT_ENABLE`| true
