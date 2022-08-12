@@ -20,7 +20,12 @@ jobs:
 #        - name: 'Update Chrome'           
 #          run: |
 #            brew reinstall --cask google-chrome
-            
+
+        - name: 'Check old IP'
+          run: curl ip.p3terx.com
+
+# Clash 和 WARP 二选一
+
 #        - name: 'Install Clash'
 #          run: |
 #            wget https://github.com/Dreamacro/clash/releases/download/v1.11.4/clash-darwin-amd64-v1.11.4.gz
@@ -30,19 +35,15 @@ jobs:
 #            cp clash-darwin-amd64-v1.11.4 ~/.config/clash/clash
 #            cd ~/.config/clash
 #            wget -O Country.mmdb https://www.sub-speeder.com/client-download/Country.mmdb
-#            wget -O config.yaml https://pre.paimon.gq/clash.yaml
+#            wget -O config.yaml ${{ secrets.CLASH_YAML }}
 #            echo ls
 #            ls
 #            nohup ./clash -d . > /dev/null 2>&1 &
 #            export all_proxy=socks5://127.0.0.1:7891
 
-        - name: 'Cloudflare Warp'
+        - name: 'Cloudflare WARP'
           run: |
-            echo "old ip"
-            curl ip.p3terx.com
             sudo curl -o /usr/local/bin/mac.sh https://raw.githubusercontents.com/fscarmen/warp/main/pc/mac.sh && bash mac.sh c
-            echo "new ip"
-            curl ip.p3terx.com
             
         - name: 'Install requirements'
           run: |
@@ -51,7 +52,7 @@ jobs:
             yes | pip3 uninstall selenium
             pip3 install selenium==4.2.0
             
-        - name: 'cat IP'
+        - name: 'Check New IP'
           run: curl ip.p3terx.com
 
 #        - name: 'Random sleep'
@@ -62,6 +63,8 @@ jobs:
           env:
             USER_ID: ${{ secrets.USER_ID }}
             PASS_WD: ${{ secrets.PASS_WD }}
+            USER_ID_1: ${{ secrets.USER_ID_1 }}
+            PASS_WD_1: ${{ secrets.PASS_WD_1 }}
             BARK_KEY: ${{ secrets.BARK_KEY }}
             TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
             TG_USER_ID: ${{ secrets.TG_USER_ID }}

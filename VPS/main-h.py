@@ -29,6 +29,19 @@ except:
     PASS_WD = ''
 
 try:
+    USER_ID_1 = os.environ['USER_ID_1']
+except:
+    # 本地调试用
+    USER_ID_1 = ''
+
+try:
+    PASS_WD_1 = os.environ['PASS_WD_1']
+except:
+    # 本地调试用
+    PASS_WD_1 = ''
+
+
+try:
     BARK_KEY = os.environ['BARK_KEY']
 except:
     # 本地调试用
@@ -314,7 +327,7 @@ def extendResult():
             print('*** %s ***' % result)
             renewVPS()
         elif 'renewed' in result:
-            result = '🎉 ' + result
+            result = '🎉 USER_ID' + result
             print(result)
             push(result)
     else:
@@ -352,6 +365,7 @@ def push(body):
             print('*** tg push fail! ***', rq_tg.content.decode('utf-8'))
 
     print('- finish!')
+    Logout()
     # kill_browser()
 
 
@@ -382,6 +396,12 @@ def funcCAPTCHA():
     print('- captcha result: %d %s %d = %s' % (number1, method, number2, captcha_result))
     return captcha_result
 
+def Logout():
+    wait_until(Button('Logout').exists)
+    highlight(Button('Logout'))
+    time.sleep(2)
+    click(Button('Logout'))
+    kill_browser()
 
 audioFile = '/audio.mp3'
 imgFile = '/capture.png'
@@ -398,7 +418,7 @@ block = False
 
 print('- loading...')
 driver = uc.Chrome(use_subprocess=True)
-driver.set_window_size(785, 627)
+driver.set_window_size(1280, 768)
 delay(2)
 set_driver(driver)
 go_to(urlLogin)
