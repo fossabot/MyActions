@@ -305,8 +305,6 @@ def extendResult():
     print('- waiting for extend result response')
     delay(3)
     if S('#response').exists():
-        # 向下滚动
-        scroll_down(num_pixels=300)
         textList = find_all(S('#response'))
         result = [key.web_element.text for key in textList][0]
         # checkResult(result)
