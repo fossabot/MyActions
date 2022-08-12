@@ -26,6 +26,7 @@ jobs:
             wget https://github.com/Dreamacro/clash/releases/download/v1.11.4/clash-darwin-amd64-v1.11.4.gz
             gunzip clash-darwin-amd64-v1.11.4.gz
             sudo chmod +x clash-darwin-amd64-v1.11.4
+            mkdir ~/.config/clash/
             cp clash-darwin-amd64-v1.11.4 ~/.config/clash/clash
             cd ~/.config/clash
             wget -O Country.mmdb https://www.sub-speeder.com/client-download/Country.mmdb
