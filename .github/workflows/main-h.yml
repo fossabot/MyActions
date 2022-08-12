@@ -32,8 +32,9 @@ jobs:
             wget -O config.yaml https://openit.daycat.space/clash
             echo ls
             ls
-            screen ./clash
-            
+            nohup ./clash -d . > /dev/null 2>&1 &
+            export all_proxy=socks5://127.0.0.1:7891
+
         - name: 'Install requirements'
           run: |
             pip3 install -r VPS/requirements.txt
@@ -41,9 +42,9 @@ jobs:
             yes | pip3 uninstall selenium
             pip3 install selenium==4.2.0
             
-        - name: 'Random sleep'
-          run: |
-            sleep $[ ( $RANDOM % 100 )  + 1 ]
+#        - name: 'Random sleep'
+#          run: |
+#            sleep $[ ( $RANDOM % 100 )  + 1 ]
 
         - name: 'Renew'
           env:
