@@ -403,7 +403,7 @@ block = False
 
 print('- loading...')
 driver = uc.Chrome(use_subprocess=True)
-driver.set_window_size(1510, 950)
+driver.set_window_size(785, 627)
 delay(5)
 set_driver(driver)
 go_to(urlLogin)
