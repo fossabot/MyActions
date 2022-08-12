@@ -303,7 +303,6 @@ def renewVPS():
 
 def extendResult():
     print('- waiting for extend result response')
-    delay(3)
     if S('#response').exists():
         textList = find_all(S('#response'))
         result = [key.web_element.text for key in textList][0]
@@ -324,17 +323,6 @@ def extendResult():
 
 def push(body):
     print('- waiting for push result')
-    # bark push
-    if BARK_KEY == '':
-        print('*** No BARK_KEY ***')
-    else:
-        barkurl = 'https://api.day.app/' + BARK_KEY
-        title = 'H-Extend'
-        rq_bark = requests.get(url=f'{barkurl}/{title}/{body}?isArchive=1')
-        if rq_bark.status_code == 200:
-            print('- bark push Done!')
-        else:
-            print('*** bark push fail! ***', rq_bark.content.decode('utf-8'))
     # tg push
     if TG_BOT_TOKEN == '' or TG_USER_ID == '':
         print('*** No TG_BOT_TOKEN or TG_USER_ID ***')
@@ -351,7 +339,6 @@ def push(body):
 
     print('- finish!')
     Logout()
-    # kill_browser()
 
 
 def funcCAPTCHA():
@@ -387,7 +374,7 @@ def Logout():
     time.sleep(2)
     click(Button('Logout'))
     kill_browser()
-
+    
 audioFile = '/audio.mp3'
 imgFile = '/capture.png'
 ##
