@@ -17,9 +17,9 @@ jobs:
         - name: 'Checkout codes'
           uses: actions/checkout@v2
           
-        - name: 'Update Chrome'           
-          run: |
-            brew reinstall --cask google-chrome
+#        - name: 'Update Chrome'           
+#          run: |
+#            brew reinstall --cask google-chrome
             
         - name: 'Install Clash'
           run: |
@@ -30,7 +30,7 @@ jobs:
             cp clash-darwin-amd64-v1.11.4 ~/.config/clash/clash
             cd ~/.config/clash
             wget -O Country.mmdb https://www.sub-speeder.com/client-download/Country.mmdb
-            wget -O config.yaml https://openit.daycat.space/clash
+            wget -O config.yaml https://pre.paimon.gq/clash.yaml
             echo ls
             ls
             nohup ./clash -d . > /dev/null 2>&1 &
@@ -45,6 +45,7 @@ jobs:
             
         - name: 'cat IP'
           run: curl ip.p3terx.com
+
 #        - name: 'Random sleep'
 #          run: |
 #            sleep $[ ( $RANDOM % 100 )  + 1 ]
