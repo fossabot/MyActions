@@ -36,10 +36,9 @@ jobs:
 #            cd ~/.config/clash
 #            wget -O Country.mmdb https://www.sub-speeder.com/client-download/Country.mmdb
 #            wget -O config.yaml ${{ secrets.CLASH_YAML }}
-#            echo ls
-#            ls
 #            nohup ./clash -d . > /dev/null 2>&1 &
 #            export all_proxy=socks5://127.0.0.1:7891
+#            networksetup -setwebproxy networkservices port
 
         - name: 'Cloudflare WARP'
           run: |
