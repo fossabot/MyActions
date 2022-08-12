@@ -1,7 +1,7 @@
 name: 'H-Extend'
 
 on:
-  #push:
+  push:
   schedule:
     # UTC (国内 UTC+8)
      - cron: '50 4 * * *'
@@ -22,7 +22,7 @@ jobs:
 #            brew reinstall --cask google-chrome
 
         - name: 'Check old IP'
-          run: curl ip.p3terx.com
+          run: curl -s ip.p3terx.com
 
 #        Clash 和 WARP 二选一
 
@@ -45,7 +45,7 @@ jobs:
             sudo curl -o /usr/local/bin/mac.sh https://raw.githubusercontents.com/fscarmen/warp/main/pc/mac.sh && bash mac.sh c
             
         - name: 'Check New IP'
-          run: curl ip.p3terx.com
+          run: curl -s ip.p3terx.com
 
         - name: 'Install requirements'
           run: |
