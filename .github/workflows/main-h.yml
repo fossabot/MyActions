@@ -24,7 +24,7 @@ jobs:
         - name: 'Check old IP'
           run: curl ip.p3terx.com
 
-# Clash 和 WARP 二选一
+#        Clash 和 WARP 二选一
 
 #        - name: 'Install Clash'
 #          run: |

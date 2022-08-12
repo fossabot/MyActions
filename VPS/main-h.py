@@ -29,19 +29,6 @@ except:
     PASS_WD = ''
 
 try:
-    USER_ID_1 = os.environ['USER_ID_1']
-except:
-    # 本地调试用
-    USER_ID_1 = ''
-
-try:
-    PASS_WD_1 = os.environ['PASS_WD_1']
-except:
-    # 本地调试用
-    PASS_WD_1 = ''
-
-
-try:
     BARK_KEY = os.environ['BARK_KEY']
 except:
     # 本地调试用
@@ -130,7 +117,7 @@ def getAudioLink():
         if Text('Multiple correct solutions required - please solve more.').exists() or Text(
                 '需要提供多个正确答案 - 请回答更多问题。').exists():
             print('*** Multiple correct solutions required - please solve more. ***')
-            click(S('#rc-button goog-inline-block rc-button-reload'))
+            click(S('#recaptcha-reload-button'))
             getAudioLink()
         delay(1)
 
@@ -169,7 +156,7 @@ def reCAPTCHA():
 def cloudflareDT():
     try:
         i = 0
-        while Text('Checking your browser before accessing').exists():
+        while Text('Checking if the site connection is secure').exists():
             i = i + 1
             print('*** cloudflare 5s detection *** ', i)
             time.sleep(1)
@@ -202,7 +189,7 @@ def login():
         write(PASS_WD, into=S('@password'))
 
     # if Text('reCAPTCHA').exists():
-    if Text('I\'m not a robot').exists() or Text('我不是机器人').exists():
+    if Text('I\'m not a robot').exists() or Text('我不是机器人').exists() or Text('进行人机身份验证').exists():
         # if S('#recaptcha-token').exists():
         print('- reCAPTCHA found!')
         block = reCAPTCHA()
@@ -294,7 +281,7 @@ def renewVPS():
         scrollDown('@agreement')
         click(S('@agreement'))
         # if Text('reCAPTCHA').exists():
-        if Text('I\'m not a robot').exists() or Text('我不是机器人').exists():
+        if Text('I\'m not a robot').exists() or Text('我不是机器人').exists() or Text('进行人机身份验证').exists():
             print('- reCAPTCHA found!')
             block = reCAPTCHA()
             if block:
@@ -316,7 +303,7 @@ def renewVPS():
 
 def extendResult():
     print('- waiting for extend result response')
-    delay(10)
+    delay(3)
     if S('#response').exists():
         # 向下滚动
         scroll_down(num_pixels=300)
@@ -327,7 +314,7 @@ def extendResult():
             print('*** %s ***' % result)
             renewVPS()
         elif 'renewed' in result:
-            result = '🎉 USER_ID' + result
+            result = '🎉' + USER_ID + result
             print(result)
             push(result)
     else:
