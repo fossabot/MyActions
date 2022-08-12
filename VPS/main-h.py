@@ -147,7 +147,7 @@ def reCAPTCHA():
     if S('#recaptcha-audio-button').exists():
         print('- audio button found')
         click(S('#recaptcha-audio-button'))
-        screenshot() # debug
+        #screenshot() # debug
         delay(7)
         getAudioLink()
         return block
