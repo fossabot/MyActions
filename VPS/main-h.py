@@ -143,12 +143,12 @@ def reCAPTCHA():
     print('- click checkbox')
     click(S('.recaptcha-checkbox-borderAnimation'))
     # screenshot() # debug
-    delay(4)
+    delay(7)
     if S('#recaptcha-audio-button').exists():
         print('- audio button found')
         click(S('#recaptcha-audio-button'))
         screenshot() # debug
-        delay(4)
+        delay(7)
         getAudioLink()
         return block
 
@@ -168,7 +168,7 @@ def cloudflareDT():
 
 def login():
     print('- login')
-    delay(1)
+    delay(5)
     # CF
     cloudflareDT()
 
@@ -207,7 +207,7 @@ def submit():
     try:
         click('Submit')
         print('- submit clicked')
-        delay(2)
+        delay(3)
     except Exception as e:
         print('*** 💣 some error in func submit!, stop running ***\nError:', e)
 
@@ -264,12 +264,12 @@ def renewVPS():
     global block
     print('- renew VPS')
     go_to(urlRenew)
-    delay(1)
+    delay(2)
     cloudflareDT()
 
     scrollDown('@submit_button')
 
-    delay(1)
+    delay(2)
     if S('#web_address').exists():
         print('- fill web address')
         write(urlWrite, into=S('#web_address'))
@@ -406,7 +406,7 @@ block = False
 print('- loading...')
 driver = uc.Chrome(use_subprocess=True)
 driver.set_window_size(1280, 768)
-delay(2)
+delay(5)
 set_driver(driver)
 go_to(urlLogin)
 login()
