@@ -21,21 +21,29 @@ jobs:
 #          run: |
 #            brew reinstall --cask google-chrome
             
-        - name: 'Install Clash'
-          run: |
-            wget https://github.com/Dreamacro/clash/releases/download/v1.11.4/clash-darwin-amd64-v1.11.4.gz
-            gunzip clash-darwin-amd64-v1.11.4.gz
-            sudo chmod +x clash-darwin-amd64-v1.11.4
-            mkdir ~/.config/clash/
-            cp clash-darwin-amd64-v1.11.4 ~/.config/clash/clash
-            cd ~/.config/clash
-            wget -O Country.mmdb https://www.sub-speeder.com/client-download/Country.mmdb
-            wget -O config.yaml https://pre.paimon.gq/clash.yaml
-            echo ls
-            ls
-            nohup ./clash -d . > /dev/null 2>&1 &
-            export all_proxy=socks5://127.0.0.1:7891
+#        - name: 'Install Clash'
+#          run: |
+#            wget https://github.com/Dreamacro/clash/releases/download/v1.11.4/clash-darwin-amd64-v1.11.4.gz
+#            gunzip clash-darwin-amd64-v1.11.4.gz
+#            sudo chmod +x clash-darwin-amd64-v1.11.4
+#            mkdir ~/.config/clash/
+#            cp clash-darwin-amd64-v1.11.4 ~/.config/clash/clash
+#            cd ~/.config/clash
+#            wget -O Country.mmdb https://www.sub-speeder.com/client-download/Country.mmdb
+#            wget -O config.yaml https://pre.paimon.gq/clash.yaml
+#            echo ls
+#            ls
+#            nohup ./clash -d . > /dev/null 2>&1 &
+#            export all_proxy=socks5://127.0.0.1:7891
 
+        - name: 'Cloudflare Warp'
+          run: |
+            echo "old ip"
+            curl ip.p3terx.com
+            sudo curl -o /usr/local/bin/mac.sh https://raw.githubusercontents.com/fscarmen/warp/main/pc/mac.sh && bash mac.sh c
+            echo "new ip"
+            curl ip.p3terx.com
+            
         - name: 'Install requirements'
           run: |
             pip3 install -r VPS/requirements.txt
