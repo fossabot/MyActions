@@ -310,6 +310,7 @@ def extendResult():
         # checkResult(result)
         if 'Robot verification failed' in result:
             print('*** %s ***' % result)
+            f=os.popen("warp n") 
             renewVPS()
         elif 'renewed' in result:
             result = '🎉   USER_ID ' + result
