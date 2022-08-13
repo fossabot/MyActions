@@ -34,15 +34,13 @@ jobs:
 #            mkdir ~/.config/clash/
 #            cp clash-darwin-amd64-v1.11.4 ~/.config/clash/clash
 #            cd ~/.config/clash
-#            wget -O Country.mmdb https://www.sub-speeder.com/client-download/Country.mmdb
+#            wget -O Country.mmdb https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb
 #            wget -O config.yaml ${{ secrets.CLASH_YAML }}
 #            nohup ./clash -d . > /dev/null 2>&1 &
-#            export all_proxy=socks5://127.0.0.1:7891
-#            networksetup -setwebproxy networkservices port
+#            export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891
 
         - name: 'Cloudflare WARP'
-          run: |
-            sudo curl -o /usr/local/bin/mac.sh https://raw.githubusercontents.com/fscarmen/warp/main/pc/mac.sh && bash mac.sh c
+          run: sudo curl -o /usr/local/bin/mac.sh https://raw.githubusercontents.com/fscarmen/warp/main/pc/mac.sh && bash mac.sh c
             
         - name: 'Check New IP'
           run: curl -s ip.p3terx.com
