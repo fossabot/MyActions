@@ -50,11 +50,17 @@ except:
 def urlDecode(s):
     return str(base64.b64decode(s + '=' * (4 - len(s) % 4))).split('\'')[1]
 
+def scrollUp(key):
+    i = 0
+    while not S(key).exists():
+        scroll_up(num_pixels=100)
+        i = i + 1
+        print('- scroll up 100px * %d for searching S(\'%s\')' % (i, key))
 
 def scrollDown(key):
     i = 0
     while not S(key).exists():
-        scroll_down(num_pixels=100)
+        scroll_up(num_pixels=100)
         i = i + 1
         print('- scroll down 100px * %d for searching S(\'%s\')' % (i, key))
 
@@ -313,7 +319,7 @@ def extendResult():
             f=os.popen("warp n") 
             renewVPS()
         elif 'renewed' in result:
-            result = '🎉   USER_ID ' + result
+            result = '🎉' +  USER_ID  + result
             print(result)
             push(result)
     else:
@@ -340,7 +346,6 @@ def push(body):
             print('*** tg push fail! ***', rq_tg.content.decode('utf-8'))
 
     print('- finish!')
-    Logout()
 
 
 def funcCAPTCHA():
@@ -371,11 +376,14 @@ def funcCAPTCHA():
     return captcha_result
 
 def Logout():
+    scrollUp('@logout')
     wait_until(Button('Logout').exists)
     highlight(Button('Logout'))
     time.sleep(2)
     click(Button('Logout'))
     kill_browser()
+    os.remove /audio.mp3
+    os.remove /capture.png
     
 audioFile = '/audio.mp3'
 imgFile = '/capture.png'
@@ -392,7 +400,7 @@ block = False
 
 print('- loading...')
 driver = uc.Chrome(use_subprocess=True)
-driver.set_window_size(785, 627)
+driver.set_window_size(1100, 627)
 delay(5)
 set_driver(driver)
 go_to(urlLogin)
