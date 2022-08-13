@@ -97,7 +97,7 @@ def getAudioLink():
 
         # 下载音频文件
         urllib.request.urlretrieve(src, os.getcwd() + audioFile)
-        delay(4)
+        delay(3)
         text = speechToText()
         print('- waiting for switch to first window')
 
@@ -172,7 +172,7 @@ def login():
     # CF
     cloudflareDT()
 
-    #scrollDown('@login')
+    scrollDown('@login')
     #scrollDown('.btn btn-primary')
 
     print('- fill user id')
@@ -303,6 +303,7 @@ def renewVPS():
 
 def extendResult():
     print('- waiting for extend result response')
+    delay(8)
     if S('#response').exists():
         textList = find_all(S('#response'))
         result = [key.web_element.text for key in textList][0]
@@ -311,7 +312,7 @@ def extendResult():
             print('*** %s ***' % result)
             renewVPS()
         elif 'renewed' in result:
-            result = '🎉' + USER_ID + result
+            result = '🎉   USER_ID ' + result
             print(result)
             push(result)
     else:
