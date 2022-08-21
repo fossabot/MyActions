@@ -7,6 +7,7 @@
 [![HOYOBBS-Checkin](https://github.com/e5u/MyActions/actions/workflows/main-HOYOBBS.yml/badge.svg)](https://github.com/e5u/MyActions/actions/workflows/main-HOYOBBS.yml)
 [![MHYY-Checkin](https://github.com/e5u/MyActions/actions/workflows/main-MHYY.yml/badge.svg)](https://github.com/e5u/MyActions/actions/workflows/main-MHYY.yml)
 [![W-Extend](https://github.com/e5u/MyActions/actions/workflows/main-w.yml/badge.svg)](https://github.com/e5u/MyActions/actions/workflows/main-w.yml)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fe5u%2FMyActions.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fe5u%2FMyActions?ref=badge_shield)
 
 
 #### ㊙️自用 所有东西都是别人的
@@ -45,3 +46,7 @@ https://github.com/aquamarine5/GenshinBirthdayReceiver
 https://github.com/PetrelPine/genshin-auto-sign-in
 
 https://github.com/ElainaMoe/MHYY-AutoCheckin
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fe5u%2FMyActions.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fe5u%2FMyActions?ref=badge_large)
